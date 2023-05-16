@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "env": {
+    "es2021": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:nuxt/recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "@nuxtjs/eslint-config-typescript"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue",
+    "@typescript-eslint",
+    "tailwindcss"
+  ],
+  "rules": {
+    "vue/multi-word-component-names": "off",
+    "vue/no-multiple-template-root": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+  }
+}
