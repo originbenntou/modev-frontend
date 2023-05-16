@@ -23,4 +23,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt'
   ],
+  tailwindcss: {
+    exposeConfig: true,
+    configPath: 'tailwind.config',
+  },
 })
