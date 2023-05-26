@@ -6,13 +6,13 @@
     "node": true
   },
   "extends": [
-    "plugin:nuxt/recommended",
     "plugin:vue/vue3-recommended",
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:tailwindcss/recommended",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "@nuxtjs/eslint-config-typescript"
+    "plugin:nuxt/recommended",
+    "eslint:recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",

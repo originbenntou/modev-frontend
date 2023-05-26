@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   nitro: {
     preset: 'node',
@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     },
   },
   devServer: {
-    host: '0.0.0.0',
+    host: 'localhost',
   },
   // srcDir: 'src',
   typescript: {
@@ -21,10 +21,6 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
   ],
-  tailwindcss: {
-    exposeConfig: true,
-    configPath: 'tailwind.config',
-  },
 })
