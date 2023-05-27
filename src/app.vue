@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { THEMES, useThemeStore } from '~/store/thema'
+import '@fontsource/fira-mono'
+import '@fontsource/inter'
+import '@fontsource/poppins'
+import { THEMES, useThemeStore } from '@/src/store/thema'
 
 const themeStore = useThemeStore()
 </script>
@@ -13,7 +16,7 @@ const themeStore = useThemeStore()
       <div class="max-w-8xl mx-auto pb-8 pl-8 pr-8 pt-4">
         <Header />
         <NuxtPage />
-        <NuxtLayout name="custom" />
+        <NuxtLayout />
       </div>
     </div>
   </div>
