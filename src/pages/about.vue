@@ -1,3 +1,5 @@
 <template>
-  こらあああああああああああ
+  <section>
+    <Hero />
+  </section>
 </template>

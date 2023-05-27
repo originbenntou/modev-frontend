@@ -8,7 +8,7 @@ const themeStore = useThemeStore()
 </script>
 
 <template>
-  <div>
+  <main>
     <div
       :data-theme="themeStore.theme.dark ? THEMES.DARK : THEMES.LIGHT"
       class="bg-gradient-to-r from-base-100"
@@ -19,5 +19,5 @@ const themeStore = useThemeStore()
         </NuxtLayout>
       </div>
     </div>
-  </div>
+  </main>
 </template>

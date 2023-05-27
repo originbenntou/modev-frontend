@@ -36,13 +36,13 @@ const appConfig = useAppConfig()
             <NuxtLink to="/about" class="n-link-base font-poppins">About</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/country" class="n-link-base font-poppins">Likes</NuxtLink>
+            <NuxtLink to="/post" class="n-link-base font-poppins">Post</NuxtLink>
           </li>
         </ul>
       </div>
     </div>
     <div class="navbar-center">
-      <a class="btn-ghost btn font-poppins text-xl normal-case">{{ appConfig.title }}</a>
+      <a href="/" class="btn-ghost btn font-poppins text-xl normal-case">{{ appConfig.title }}</a>
     </div>
     <div class="navbar-end">
       <button class="btn-ghost btn-circle btn" @click="themeStore.toggle">
