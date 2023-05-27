@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
 export const THEMES = {
-  DARK: 'rosepine',
-  LIGHT: 'dawn',
+  DARK: 'acid',
+  LIGHT: 'dracula',
 }
 
 export const useThemeStore = defineStore('theme', () => {

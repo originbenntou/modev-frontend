@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useNow } from '@vueuse/core'
-import { useThemeStore } from '@/src/store/thema'
+import { useThemeStore } from '@/src/store/theme'
 
 const now = useNow()
 const themeStore = useThemeStore()

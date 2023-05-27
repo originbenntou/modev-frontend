@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   },
   srcDir: 'src/',
   alias: {
+    '~': resolve(__dirname),
     '@': resolve(__dirname),
   },
   imports: {
