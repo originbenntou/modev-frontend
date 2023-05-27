@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     preset: 'node',
   },
   srcDir: 'src/',
+  // buildDir: 'dist',
   alias: {
     '~': resolve(__dirname),
     '@': resolve(__dirname),
