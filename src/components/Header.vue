@@ -7,7 +7,7 @@ const title = 'MOTECH'
 </script>
 
 <template>
-  <div class="navbar mb-2 bg-neutral shadow-lg">
+  <div class="navbar mb-3">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn-ghost btn-circle btn">

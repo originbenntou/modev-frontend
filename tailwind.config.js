@@ -20,8 +20,8 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      'dracula',
-      'acid'
+      'cmyk',
+      'night',
     ],
   },
 };

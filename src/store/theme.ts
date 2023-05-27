@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia'
 
 export const THEMES = {
-  DARK: 'acid',
-  LIGHT: 'dracula',
+  LIGHT: 'cmyk',
+  DARK: 'night',
 }
 
 export const useThemeStore = defineStore('theme', () => {
-  const theme = reactive({ dark: false })
+  const theme = reactive({ dark: true })
 
   function toggle() {
     theme.dark = !theme.dark

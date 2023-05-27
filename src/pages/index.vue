@@ -1,3 +1,3 @@
 <template>
-  ああああああああああああ
+  <Hero />
 </template>
