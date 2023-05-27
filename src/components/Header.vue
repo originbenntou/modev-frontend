@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useNow } from '@vueuse/core'
 import { useThemeStore } from '@/src/store/theme'
 
-const now = useNow()
 const themeStore = useThemeStore()
 
 const title = 'MOTECH'
@@ -65,7 +63,6 @@ const title = 'MOTECH'
           />
         </svg>
       </button>
-      <button class="btn-shape btn-ghost btn ml-8 mr-4">{{ now.toLocaleTimeString() }}</button>
     </div>
   </div>
 </template>

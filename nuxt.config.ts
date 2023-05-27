@@ -8,11 +8,6 @@ export default defineNuxtConfig({
     '~': resolve(__dirname),
     '@': resolve(__dirname),
   },
-  imports: {
-    dirs: [
-      'stores'
-    ],
-  },
   vite: {
     server: {
       watch: {
