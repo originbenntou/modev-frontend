@@ -1,7 +1,13 @@
-import { defineNuxtConfig } from 'nuxt/config'
+import { resolve } from 'path'
 export default defineNuxtConfig({
   nitro: {
     preset: 'node',
+  },
+  srcDir: 'src/',
+  // buildDir: 'dist',
+  alias: {
+    '~': resolve(__dirname),
+    '@': resolve(__dirname),
   },
   vite: {
     server: {
@@ -12,8 +18,8 @@ export default defineNuxtConfig({
   },
   devServer: {
     host: 'localhost',
+    // port: 80,
   },
-  // srcDir: 'src',
   typescript: {
     tsConfig: {
       extends: '@tsconfig/strictest/tsconfig.json',
