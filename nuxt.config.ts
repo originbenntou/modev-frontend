@@ -1,5 +1,24 @@
 import { resolve } from 'path'
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'MO-TECH',
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+      ],
+      script: [
+        {
+          type: 'text/javascript',
+          async: true,
+          src: 'https://platform.twitter.com/widgets.js'
+        }
+      ],
+    }
+  },
+  css: [
+    '~/src/assets/css/style.scss',
+  ],
   nitro: {
     preset: 'node',
   },

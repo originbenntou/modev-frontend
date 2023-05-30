@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="hero min-h-screen bg-base-200">
+  <div class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <img alt="mycon" src="@/src/assets/images/mycon.jpg" class="max-w-sm rounded-lg shadow-2xl" />
       <div>

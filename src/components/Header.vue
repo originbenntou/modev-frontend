@@ -30,19 +30,19 @@ const appConfig = useAppConfig()
           class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
         >
           <li>
-            <NuxtLink to="/" class="n-link-base font-poppins">Home</NuxtLink>
+            <NuxtLink to="/" class="n-link-base">Home</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about" class="n-link-base font-poppins">About</NuxtLink>
+            <NuxtLink to="/about" class="n-link-base">About</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/post" class="n-link-base font-poppins">Post</NuxtLink>
+            <NuxtLink to="/post" class="n-link-base">Blog</NuxtLink>
           </li>
         </ul>
       </div>
     </div>
     <div class="navbar-center">
-      <a href="/" class="btn-ghost btn font-poppins text-xl normal-case">{{ appConfig.title }}</a>
+      <a href="/" class="btn-ghost btn text-xl normal-case">{{ appConfig.title }}</a>
     </div>
     <div class="navbar-end">
       <button class="btn-ghost btn-circle btn" @click="themeStore.toggle">
