@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 export const THEMES = {
-  LIGHT: 'cmyk',
+  LIGHT: 'pastel',
   DARK: 'night',
 }
 
