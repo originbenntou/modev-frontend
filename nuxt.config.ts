@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: 'localhost',
+      baseURL: 'http://localhost',
     }
   },
   typescript: {
@@ -55,6 +55,9 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxt/content',
+  ],
+  plugins: [
+    { src: 'src/plugins/msw.ts' }
   ],
   content: {
     highlight: {
