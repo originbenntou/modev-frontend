@@ -1,5 +1,6 @@
 import { resolve } from 'path'
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
       title: 'MO-TECH',
@@ -39,6 +40,11 @@ export default defineNuxtConfig({
     host: 'localhost',
     // port: 80,
   },
+  runtimeConfig: {
+    public: {
+      baseURL: 'localhost',
+    }
+  },
   typescript: {
     tsConfig: {
       extends: '@tsconfig/strictest/tsconfig.json',
@@ -51,7 +57,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
   ],
   content: {
-    // https://content.nuxtjs.org/api/configuration/
     highlight: {
       theme: 'github-dark-dimmed',
     },

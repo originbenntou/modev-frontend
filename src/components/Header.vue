@@ -36,7 +36,7 @@ const appConfig = useAppConfig()
             <NuxtLink to="/about" class="n-link-base">About</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/post" class="n-link-base">Blog</NuxtLink>
+            <NuxtLink to="/blogs" class="n-link-base">Blog</NuxtLink>
           </li>
         </ul>
       </div>

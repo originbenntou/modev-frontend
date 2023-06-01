@@ -8,5 +8,17 @@
     </aside>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
+import { $fetch } from 'ofetch'
+
+const config = useRuntimeConfig();
+
+
+const { data: books } = await useFetch<{
+  books: { id: number; title: string; author: string }[];
+}>("/api/books", {
+  baseURL: config.public.baseUrl,
+});
+
+console.log(books)
 </script>
