@@ -1,4 +1,5 @@
 import { resolve } from 'path'
+import type { NitroConfig } from 'nitropack'
 export default defineNuxtConfig({
   ssr: true,
   app: {
@@ -29,6 +30,11 @@ export default defineNuxtConfig({
     '~': resolve(__dirname),
     '@': resolve(__dirname),
   },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env['NUXT_API_URL'] || 'http://localhost',
+    }
+  },
   vite: {
     server: {
       watch: {
@@ -40,9 +46,13 @@ export default defineNuxtConfig({
     host: 'localhost',
     // port: 80,
   },
-  runtimeConfig: {
-    public: {
-      baseURL: 'http://localhost',
+  hooks: {
+    'nitro:config': (config: NitroConfig) => {
+      if (isDebugMode()) {
+        const mockServer = resolve(__dirname, './src/mock/server')
+        config.srcDir = mockServer
+        config.scanDirs = [mockServer]
+      }
     }
   },
   typescript: {
@@ -56,12 +66,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/content',
   ],
-  plugins: [
-    { src: 'src/plugins/msw.ts' }
-  ],
   content: {
     highlight: {
       theme: 'github-dark-dimmed',
     },
   },
 })
+
+const isDebugMode = (): boolean => {
+  return process.env['NUXT_APP_ENV'] == 'LOCAL'
+}
