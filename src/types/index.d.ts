@@ -1,3 +1,3 @@
-export type LikeCard = {
+export type LikedTweet = {
   name: string
 }
