@@ -1,5 +1,6 @@
 import { resolve } from 'path'
 import type { NitroConfig } from 'nitropack'
+
 export default defineNuxtConfig({
   ssr: true,
   app: {

@@ -1,15 +1,19 @@
 <script setup lang="ts">
-// import LikedTweet from '@/src/types/index'
-//
-// const config = useRuntimeConfig();
-// const { data: LikedTweets } = await useFetch<Array<LikedTweet>>(`${config.public.baseURL}/api/LikedTweets`)
+import { LikedTweetComponentProps } from '@/src/components/LikedTweet.vue'
+
+const config = useRuntimeConfig();
+const { data: likedTweets } = await useFetch(`/api/likedTweets`, {
+  baseURL: config.public.baseURL
+})
 </script>
 
 <template>
   <div class="flex p-6">
     <section class="w-full sm:w-5/6">
       <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-        <LikedTweet />
+        <div v-for="likedTweet in likedTweets" :key="likedTweet">
+          <LikedTweet :likedTweet=likedTweet />
+        </div>
       </div>
     </section>
     <aside class="w-full sm:w-1/6 ml-10">

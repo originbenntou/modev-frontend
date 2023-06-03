@@ -1,19 +1,25 @@
 <script setup lang='ts'>
+export type LikedTweetComponentProps = {
+  addDate: string,
+  url: string,
+  tags: Array<string>,
+}
+const props = defineProps<{ likedTweet: LikedTweetComponentProps }>()
 </script>
 
 <template>
   <div>
     <div class="card bg-base-100 shadow-xl">
-<!--      <figure><img src="@/src/assets/images/mycon.jpg" alt="" /></figure>-->
-      <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">クラウド環境のやられアプリ「AWSGoat」、防御側のサービスも学べて良いですね<br>ちなみに以下のサービスについてのハンズオンがある。<br>・AWS Config<br>・AWS IAM Access Analyzer<br>・Amazon GuardDuty<br>・Amazon Macie<br>ーーー<br>ine-labs / AWSGoat<a href="https://t.co/bZEWUV3HpQ">https://t.co/bZEWUV3HpQ</a></p>&mdash; motikan2010 (@motikan2010) <a href="https://twitter.com/motikan2010/status/1662339623773941761?ref_src=twsrc%5Etfw">May 27, 2023</a></blockquote>
-      <div class="card-body">
+      <blockquote class="twitter-tweet">
+        <a :href="likedTweet.url" />
+      </blockquote>
+      <div class="card-body pt-3">
         <h4 class="text-base">
-          2023-01-01
-          <span class="badge badge-sm">NEW</span>
+          {{ likedTweet.addDate }}
         </h4>
         <div class="card-actions justify-start">
-          <div class="badge badge-outline p-3">
-            <span>Cat</span>
+          <div v-for="(tag, index) in likedTweet.tags" :key="index" class="badge badge-outline p-3">
+            <span class="">#{{ tag }}</span>
           </div>
         </div>
       </div>
@@ -25,3 +31,10 @@
     </div>
   </div>
 </template>
+
+<style lang='scss'>
+.twitter-tweet {
+  margin: 0;
+  background-color: #00dc82;
+}
+</style>
