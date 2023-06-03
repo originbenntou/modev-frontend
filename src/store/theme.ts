@@ -8,7 +8,7 @@ export const THEMES = {
 export const useThemeStore = defineStore('theme', () => {
   const theme = reactive({ dark: true })
 
-  function toggle() {
+  const toggle = () => {
     theme.dark = !theme.dark
   }
 
