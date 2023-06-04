@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import dayjs from "dayjs"
+
 const config = useRuntimeConfig();
 const { data: likedTweets, refresh: refreshLikedTweet } = await useFetch(`/api/likedTweets`, {
   baseURL: config.public.baseURL
@@ -13,17 +15,15 @@ const updateLikedTweet = async (likedTweet: any) => {
 }
 
 const sideNavTags = computed(() => {
-  const allTags = likedTweets.value
-    .map((likedTweet: any) => likedTweet.tags)
-    .flatMap(v => v)
+  const allTags = likedTweets.value.flatMap((likedTweet: any) => likedTweet.tags)
   return Array.from(new Set(allTags))
 })
 
 const sideNavDaily = computed(() => {
-  const allDaily = likedTweets.value
-    .map((likedTweet: any) => likedTweet.addDate)
-    .flatMap(v => v)
-  return Array.from(new Set(allDaily))
+  const allDaily = likedTweets.value.flatMap((likedTweet: any) => {
+    return dayjs(likedTweet.addDate).format("YYYY年M月")
+  })
+  return Array.from(new Set(allDaily)).sort().reverse()
 })
 </script>
 

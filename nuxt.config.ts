@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     head: {
-      title: 'MO-TECH',
+      title: 'MOV',
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },

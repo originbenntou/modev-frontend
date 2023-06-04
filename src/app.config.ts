@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  title: 'MO-TECH',
+  title: 'MOV',
   profile: {
     name: 'mototsuka',
   },
