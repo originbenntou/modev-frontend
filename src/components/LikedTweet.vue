@@ -1,6 +1,8 @@
 <script setup lang='ts'>
+import { LikedTweet } from '~/src/types/likedTweet'
+
 const props = defineProps<{
-  likedTweet: any,
+  likedTweet: LikedTweet,
   refresh: Function,
   update: Function
 }>()

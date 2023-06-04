@@ -3,7 +3,11 @@ import dayjs from "dayjs"
 
 const config = useRuntimeConfig();
 const { data: likedTweets, refresh: refreshLikedTweet } = await useFetch(`/api/likedTweets`, {
-  baseURL: config.public.baseURL
+  baseURL: config.public.baseURL,
+  query: {
+    days: ["2023-01-01", "2023-01-02"],
+    tags: ["Cat", "Dog"],
+  }
 })
 
 const updateLikedTweet = async (likedTweet: any) => {

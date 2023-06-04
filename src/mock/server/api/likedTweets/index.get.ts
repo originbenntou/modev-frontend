@@ -1,4 +1,5 @@
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+  console.log(getQuery(event))
   return [
     {
       id: 1,
