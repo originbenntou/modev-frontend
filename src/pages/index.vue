@@ -11,6 +11,20 @@ const updateLikedTweet = async (likedTweet: any) => {
     body: likedTweet
   })
 }
+
+const sideNavTags = computed(() => {
+  const allTags = likedTweets.value
+    .map((likedTweet: any) => likedTweet.tags)
+    .flatMap(v => v)
+  return Array.from(new Set(allTags))
+})
+
+const sideNavDaily = computed(() => {
+  const allDaily = likedTweets.value
+    .map((likedTweet: any) => likedTweet.addDate)
+    .flatMap(v => v)
+  return Array.from(new Set(allDaily))
+})
 </script>
 
 <template>
@@ -27,7 +41,10 @@ const updateLikedTweet = async (likedTweet: any) => {
       </div>
     </section>
     <aside class="w-full sm:w-1/6 ml-10">
-      <SideNav />
+      <SideNav
+        :tags=sideNavTags
+        :daily=sideNavDaily
+      />
     </aside>
   </div>
 </template>
