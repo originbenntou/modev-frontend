@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     '~/src/assets/css/style.scss',
   ],
   nitro: {
-    preset: 'node',
+    preset: 'node-server',
   },
   srcDir: 'src/',
   // buildDir: 'dist',

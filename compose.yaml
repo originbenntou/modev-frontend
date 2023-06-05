@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    volumes:
+      - ./src:/srv/src
+      - ./node_modules:/srv/src/node_modules
+    working_dir: "/srv"
+    ports:
+      - "3000:3000"
+      - "24678:24678" # HMR用のポートを追加
+    environment:
+      - HOST=0.0.0.0
+      - CHOKIDAR_USEPOLLING=true
+    platform: linux/arm64/v8

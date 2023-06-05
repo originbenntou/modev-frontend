@@ -18,17 +18,20 @@ const updateLikedTweet = async (likedTweet: any) => {
   })
 }
 
-const sideNavTags = computed(() => {
-  const allTags = likedTweets.value.flatMap((likedTweet: any) => likedTweet.tags)
-  return Array.from(new Set(allTags))
-})
+const sideNavTags = ["a", "b", "c"]
+const sideNavDaily = ["a", "b", "c"]
 
-const sideNavDaily = computed(() => {
-  const allDaily = likedTweets.value.flatMap((likedTweet: any) => {
-    return dayjs(likedTweet.addDate).format("YYYY年M月")
-  })
-  return Array.from(new Set(allDaily)).sort().reverse()
-})
+// const sideNavTags = computed(() => {
+//   const allTags = likedTweets.value.flatMap((likedTweet: any) => likedTweet.tags)
+//   return Array.from(new Set(allTags))
+// })
+//
+// const sideNavDaily = computed(() => {
+//   const allDaily = likedTweets.value.flatMap((likedTweet: any) => {
+//     return dayjs(likedTweet.addDate).format("YYYY年M月")
+//   })
+//   return Array.from(new Set(allDaily)).sort().reverse()
+// })
 </script>
 
 <template>

@@ -6,7 +6,8 @@
     "dev": "nuxt dev --dotenv .env.example",
     "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "start": "nuxt start"
   },
   "dependencies": {
     "dayjs": "^1.11.8",
@@ -46,6 +47,7 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
     "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "vue": "^3.3.4"
   }
 }
