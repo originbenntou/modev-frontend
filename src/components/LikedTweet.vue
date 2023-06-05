@@ -1,24 +1,23 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { LikedTweet } from '~/src/types/likedTweet'
 
 const props = defineProps<{
-  likedTweet: LikedTweet,
-  refresh: Function,
+  likedTweet: LikedTweet
+  refresh: Function
   update: Function
 }>()
 
-const inputTag = ref<string>("")
+const inputTag = ref<string>('')
 
 const submitTag = async () => {
-  if (inputTag.value == '') return
+  if (inputTag.value === '') return
   props.likedTweet.tags.push(inputTag.value)
-  inputTag.value = '';
+  inputTag.value = ''
 
   // update
   await props.update(props.likedTweet)
   await props.refresh()
 }
-
 </script>
 
 <template>
@@ -28,7 +27,7 @@ const submitTag = async () => {
         class="twitter-tweet"
         data-theme="light"
         data-chrome="nofooter noheader"
-        hide_media=true
+        hide_media="true"
         data-cards="hidden"
       >
         <a href="https://twitter.com/pom_dawacan/status/1664424695356342272?ref_src=twsrc%5Etfw" />
@@ -38,19 +37,19 @@ const submitTag = async () => {
           {{ likedTweet.addDate }}
         </h4>
         <div class="card-actions justify-start">
-          <div v-for="(tag, index) in likedTweet.tags" :key="index" class="badge badge-outline p-3">
+          <div v-for="(tag, index) in likedTweet.tags" :key="index" class="badge-outline badge p-3">
             <span class="">{{ tag }}</span>
           </div>
         </div>
       </div>
-      <div class="mt-3" v-if='true'>
+      <div v-if="true" class="mt-3">
         <div class="form-control w-full p-2">
           <form @submit.prevent="submitTag">
             <input
               v-model="inputTag"
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full"
+              class="input-bordered input w-full"
             />
           </form>
         </div>
@@ -59,11 +58,12 @@ const submitTag = async () => {
   </div>
 </template>
 
-<style lang='scss'>
+<style lang="scss">
 .liked-tweet {
   //border-radius: 10px;
 }
+
 .twitter-tweet {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 </style>

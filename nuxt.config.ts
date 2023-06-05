@@ -1,5 +1,13 @@
 import { resolve } from 'path'
 import type { NitroConfig } from 'nitropack'
+import { ProcessEnv } from 'npm-run-path'
+
+type Environment = ProcessEnv & {
+  NUXT_API_URL?: string
+  NUXT_APP_ENV?: string
+}
+
+const env: Environment = process.env
 
 export default defineNuxtConfig({
   ssr: true,
@@ -7,21 +15,19 @@ export default defineNuxtConfig({
     head: {
       title: 'MOV',
       meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
       script: [
         {
           type: 'text/javascript',
           async: true,
-          src: 'https://platform.twitter.com/widgets.js'
-        }
+          src: 'https://platform.twitter.com/widgets.js',
+        },
       ],
-    }
+    },
   },
-  css: [
-    '~/src/assets/css/style.scss',
-  ],
+  css: ['~/src/assets/css/style.scss'],
   nitro: {
     preset: 'node-server',
   },
@@ -32,14 +38,14 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: process.env['NUXT_API_URL'] || 'http://localhost',
-    }
+      baseURL: env.NUXT_API_URL || 'http://localhost',
+    },
   },
   vite: {
     server: {
       watch: {
-        usePolling: true
-      }
+        usePolling: true,
+      },
     },
   },
   devServer: {
@@ -53,19 +59,14 @@ export default defineNuxtConfig({
         config.srcDir = mockServer
         config.scanDirs = [mockServer]
       }
-    }
+    },
   },
   typescript: {
     tsConfig: {
       extends: '@tsconfig/strictest/tsconfig.json',
     },
   },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@nuxt/content',
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@vueuse/nuxt', '@nuxt/content'],
   content: {
     highlight: {
       theme: 'github-dark-dimmed',
@@ -74,5 +75,5 @@ export default defineNuxtConfig({
 })
 
 const isDebugMode = (): boolean => {
-  return process.env['NUXT_APP_ENV'] == 'LOCAL'
+  return env.NUXT_APP_ENV === 'LOCAL'
 }
