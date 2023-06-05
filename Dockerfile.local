@@ -5,14 +5,7 @@ WORKDIR /srv
 RUN apk update --no-cache && \
     npm i -g pnpm
 
-COPY package.json pnpm-lock.yaml .npmrc ./
-COPY nuxt.config.ts tailwind.config.js postcss.config.js tsconfig.json ./
-COPY .eslintrc .prettierrc ./
-COPY src ./src
+COPY . .
 
 RUN pnpm i && \
     pnpm build
-
-EXPOSE 3000
-
-CMD [ "pnpm", "dev" ]

@@ -26,7 +26,6 @@ export default defineNuxtConfig({
     preset: 'node-server',
   },
   srcDir: 'src/',
-  // buildDir: 'dist',
   alias: {
     '~': resolve(__dirname),
     '@': resolve(__dirname),
@@ -44,7 +43,7 @@ export default defineNuxtConfig({
     },
   },
   devServer: {
-    host: 'localhost',
+    // host: 'localhost',
     // port: 80,
   },
   hooks: {
